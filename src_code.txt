@@ -1,0 +1,36 @@
+;made with autohotkey
+
+Gui, +AlwaysOnTop
+Gui, Add, Picture, x6 y7 w320 h90 , splashbot.png
+Gui, Add, Edit, x166 y117 w60 h20 vMedi, 2
+Gui, Add, Edit, x166 y147 w60 h20 vMana, 3
+Gui, Add, Edit, x166 y177 w60 h20 vSplash, 4
+Gui, Add, Text, x6 y117 w150 h20 , Medicine Potion
+Gui, Add, Text, x6 y147 w150 h20 , Mana Potion
+Gui, Add, Text, x6 y177 w150 h20 , Splashy Ice 
+Gui, Add, Button, x126 y217 w100 h30, Activate
+Gui, Show, x460 y198 h261 w335, KalOnline SplashBot V5
+Return
+GuiClose:
+ButtonActivate:
+Gui, Submit
+;Bot Starting
+IfWinExist, KalOnline
+WinActivate
+SoundPlay, VO_OG_133_Male_OldGod_Play_01.wav
+Loop
+{
+ControlSend, , %Mana%, KalOnline,
+Sleep 100
+ControlSend, , %Medicine%, KalOnline,
+Sleep 00
+ControlSend, , %Splash%, KalOnline,
+}
+f6::
+Pause
+Suspend
+return
+
+f7::
+ExitApp
+return
